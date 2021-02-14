@@ -6,6 +6,13 @@ $(function(){
             x: 0,
             y: 20,
         },
+        chart: {
+            events: {
+                load: function(){
+                    chartOk();
+                }
+            }
+        },
         // Este es para ocultar el letrero de "Highcharts.com"
         credits: {
             enabled: false,
@@ -28,10 +35,10 @@ $(function(){
         },
         series: [{
             name: 'caso1',
-            data: [20, 30, 50]
+            data: []
         }, {
             name: 'caso2',
-            data: [10, 45, 85]
+            data: []
         }]
     });
 
@@ -40,6 +47,11 @@ $(function(){
             plotBackgroundColor: null,
             plotBorderWidth: 0,
             plotShadow: false,
+            events: {
+                load: function(){
+                    chartOk();
+                }
+            }
         },
         credits: {
             enabled: false
@@ -74,10 +86,10 @@ $(function(){
             name: 'Porciento',
             innerSize: '50%',
             data: [
-                ['Val. 1', 20],
-                ['Val. 2', 60],
-                ['Val. 3', 80],
-                ['Val. 4', 10]
+                ['Val. 1', 0],
+                ['Val. 2', 0],
+                ['Val. 3', 0],
+                ['Val. 4', 0]
             ]
         }]
     });
@@ -88,6 +100,11 @@ $(function(){
             plotBorderWidth: null,
             plotShadow: false,
             type: 'pie',
+            events: {
+                load: function(){
+                    chartOk();
+                }
+            }
         },
         title: {
             text: 'Resultado por zonas',
@@ -123,18 +140,18 @@ $(function(){
             colorByPoint: true,
             data: [{
                 name: 'Zona 1',
-                y: 56.33
+                y: 0
             }, {
                 name: 'Zona 2',
-                y: 24.03,
+                y: 0
+            },{
+                name: 'Zona 3',
+                y: 0,
                 sliced: true,
                 selected: true
             },{
-                name: 'Zona 3',
-                y: 10.38
-            },{
                 name: 'Zona 4',
-                y: 4.77
+                y: 0
             }]
         }]
     });
